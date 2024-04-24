@@ -20,10 +20,7 @@ function Dollarrate() {
       //console.log(response["data"]["rates"]["PKR"])
       setDollar(response.data.rates.PKR);
       
-      // data:{asr:12:00,duhr:12}
-      // const [asr,setasr]=useState("Press button tto view")
-      // setasr(response.data.asr)
-      // setasr(response.data.duhr)
+
       
     };
     useEffect(()=>{

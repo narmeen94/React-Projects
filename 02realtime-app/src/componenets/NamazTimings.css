@@ -1,0 +1,31 @@
+
+
+#namaz{
+    color:rgb(4, 19, 5);
+    align-items: center;
+
+}
+.namazContainer{
+    background-color:#26914a ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 30px;
+}
+
+.maintext{
+    color:red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#namazHeading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dots{
+    color:#26914a
+}
