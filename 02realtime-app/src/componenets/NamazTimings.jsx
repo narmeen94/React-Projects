@@ -43,6 +43,8 @@ function NamazTimings() {
     getNamazTimings();
   }, []);
 
+  
+
   return (
     <>
       <h1 id="namazHeading">Namaz Timings Today</h1>

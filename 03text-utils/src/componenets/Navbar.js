@@ -1,5 +1,9 @@
 import React from "react";
 import propTypes from "prop-types";
+import { Link } from "react-router-dom";
+//import About from "./About";
+
+
 
 // props are properties of a components that are passed to it so it can render it. In our case, the propsa are
 //passed from App.js to this Navbar
@@ -13,9 +17,9 @@ export default function Navbar(props) {
         {/* <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark"> */}
 
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             {props.title}
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -30,15 +34,18 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <Link className="nav-link " aria-current="page" to="/about">
                   {props.tab1}
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Link
-                </a>
+                <Link className="nav-link" to="/contact">
+                  Contact
+                </Link>
               </li>
+              {/* <li className="nav-item">
+              <Link to="/About">About me</Link>
+              </li> */}
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -51,26 +58,34 @@ export default function Navbar(props) {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="/">
+                    <Link className="dropdown-item" to="/">
                       Action
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/">
+                    <Link className="dropdown-item" to="/">
                       Another action
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/">
+                    <Link className="dropdown-item" to="/">
                       Something else here
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
             </ul>
+            <div className='d-flex'>
+              <div className='bg-primary rounded mx-2' onClick={()=>{props.toggleColor('primary')}}style={{height: '20px',width: '20px',cursor:'pointer'}}>  </div>
+              <div className='bg-warning rounded mx-2' onClick={()=>{props.toggleColor('warning')}} style={{height: '20px',width: '20px',cursor:'pointer'}}>  </div>
+              <div className='bg-success rounded mx-2' onClick={()=>{props.toggleColor('success')}} style={{height: '20px',width: '20px',cursor:'pointer'}}>  </div>
+              <div className='bg-dark rounded mx-2' onClick={()=>{props.toggleColor('dark')}} style={{height: '20px',width: '20px',cursor:'pointer'}}>  </div>
+              <div className='bg-danger rounded mx-2' onClick={()=>{props.toggleColor('danger')}} style={{height: '20px',width: '20px',cursor:'pointer'}}>  </div>
+
+            </div>
             
             {/* below, in line 85 we have given "text-light" which is used to whiten any text in bootstrap. */}
             <div
@@ -119,6 +134,7 @@ export default function Navbar(props) {
           </div>
         </div>
       </nav>
+      
     </div>
   );
 }
