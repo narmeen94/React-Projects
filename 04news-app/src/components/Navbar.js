@@ -4,18 +4,20 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export class Navbar extends Component {
+    
   render() {
+    let {toggleStyle,mode}=this.props;
     return (
-      <div>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary " data-bs-theme="light">
+      
+        <nav  className="navbar sticky-top navbar-expand-lg bg-body-tertiary " data-bs-theme={mode}>
         {/* <nav className="navbar navbar-expand-lg bg-body-tertiary"> navbar bg-dark border-bottom border-body  */}
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               News Monkey
             </Link>
             <div>
-            <iframe src="https://giphy.com/embed/Z9c492wR2G52lJWPMG" style={{height : "50px",width:"50px"
-        }}></iframe>
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTFiMWNmdjd4dm5zNWQyaWE5NDltNXhmYXJxeWt1a21mdmtieG10MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Z9c492wR2G52lJWPMG/giphy.gif"alt="" style={{height : "40px",width:"40px"
+        }}/>
         
         </div>
             <div className="ms-auto">
@@ -84,8 +86,21 @@ export class Navbar extends Component {
             </div>
             
           </div>
+          <div
+              className={`form-check form-switch  mx-5 text-${
+                mode === "light" ? "dark" : "light"
+              }`}
+            >
+              <input
+                className="form-check-input"
+                type="checkbox"
+                onClick={toggleStyle}
+                role="switch"
+                id="flexSwitchCheckDefault"
+              />
+              </div>
         </nav>
-      </div>
+     
     );
   }
 }

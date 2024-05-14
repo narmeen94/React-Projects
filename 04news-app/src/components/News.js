@@ -89,17 +89,17 @@ export class News extends Component {
 
 
   render() {
-    //let {pageSize}=this.props;
+    let {mode}=this.props;
     
     return (
         <>
-        <div className="container my-4">
-            <h1 className='text-center mb-5'>Top Headlines</h1>
+        <div className="container ">
+            <h1 className={`text-center my-5 text-${mode === "light" ? "dark" : "light"}`} style={{marginTop:"100px"}}>Top Headlines</h1>
             {this.state.loading && <Spinner/>}
             <div className="row">
                 {!this.state.loading && this.state.articles.map((element)=>{
                     return(
-                    <div className="col md-4 " key={element.url}>
+                    <div className="col md-4 my-5" key={element.url}>
                         {/* limiting title to 45 chars and description to 88 chars */}
                     <Newsitem title={element.title?element.title.slice(0,45):''} description={element.description?element.description.slice(0,88):''} imgUrl={element.urlToImage} newsurl={element.url}/>
                     </div>
