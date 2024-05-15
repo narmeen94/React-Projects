@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import Newsitem from './Newsitem'
 import Spinner from './Spinner';
 import PropTypes from "prop-types"
+import "./News.css"
+import Dollarrate from './Dollarrate';
+//import './fonts/Jacquard_24_Charted/Jacquard24Charted-Regular.ttf'
+
 export class News extends Component {
     static defaultProps={
         pageSize : 6,
@@ -93,8 +97,9 @@ export class News extends Component {
     
     return (
         <>
-        <div className="container ">
-            <h1 className={`text-center my-5 text-${mode === "light" ? "dark" : "light"}`} style={{marginTop:"100px"}}>Top Headlines</h1>
+        <div className="first-container">
+        <div className="container-main ">
+            <h1 id="topHeadlines" className={`text-center my-5 text-${mode === "light" ? "dark" : "light"}`} style={{marginTop:"100px"}}>Top Headlines</h1>
             {this.state.loading && <Spinner/>}
             <div className="row">
                 {!this.state.loading && this.state.articles.map((element)=>{
@@ -110,18 +115,24 @@ export class News extends Component {
                 
             
             </div>
+            
 
             
         </div>
+        <div >
+                <Dollarrate/>
+        </div>
+    </div>
 
         <div className="d-flex justify-content-between">
         <button type="button" disabled={this.state.page<=1} onClick={this.prevClick}class="btn btn-dark">&larr; Previous Page </button>
         <button type="button" disabled={this.state.page+1 > Math.ceil(this.state.totalResults/this.props.pageSize)}onClick={this.nextClick} class="btn btn-dark">Next Page &rarr;</button>
         </div>
+        </>
 
       
 
-      </>
+      
     )
   };
 }

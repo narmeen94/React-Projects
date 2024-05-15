@@ -1,0 +1,26 @@
+.container-side{
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 190px; */
+    padding-bottom: 500px;
+    
+    /* margin-left: 1000px; */
+   
+}
+
+.form-control{
+    width: 200px;
+    border-color :rgb(20, 10, 10)
+    
+}
+
+#converter{
+    padding-top: 80px;
+    padding-bottom : 50px;
+    color : rgb(15, 2, 2);
+    
+}

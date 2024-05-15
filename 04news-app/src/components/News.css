@@ -1,0 +1,16 @@
+.container-main{
+   
+    width: 1500px;
+    
+    
+}
+
+.first-container{
+    display: flex;
+    
+}
+
+#topHeadlines{
+    font-family: Georgia, serif;
+}
+  

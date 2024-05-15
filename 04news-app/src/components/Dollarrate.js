@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./Dollarrate.css";
+import calm from "./calm-meditating-monkey-gif-zoogif.gif"
 
 export class Dollarrate extends Component {
     constructor() {
@@ -47,47 +48,54 @@ export class Dollarrate extends Component {
 
     render() {
         return (
-            <>
-            <div className="text-center">
-                <h2>Welcome to News Monkey- Your Free news Companion!</h2>
+            
+            <div className="container-side">
+
+                <img src={calm} alt="" style={{height : "200px",width:"200px"}}/>
+        
+        
                 
-                <div>
-                    <p>Let's see USD to PKR today:</p>
-                </div>
-                </div>
-                <div className="container-main " >
-                <form className="container-form">
-                    <div className="col-4">
-                        <div className="input-group my-3 mx-3" >
-                            <div className="input-group-text"></div>
+                
+               
+                    <h2 id="converter">USD to PKR Converter</h2>
+                
+                
+               
+               
+                    
+                        
+                            
                             <input
                                 type="text"
-                                className="form-control"
-                                id="inlineFormInputGroupUsername"
+                                className="form-control mb-3"
+                                
                                 placeholder="1 USD"
                                 onChange={this.updateUsd} // Changed function name
                             />
-                        </div>
+                       
                      
                             <input
                                 type="text"
-                                className="form-control" 
-                                id="inlineFormInputGroupUsername"
+                                className="form-control mb-3" 
+                               
                                 placeholder={this.state.pkr}
                             />
-                       </div>
-                    <div className="col-5">
+                             
+                       
+                    <div className="buttonconv">
                         <button
                             type="button"
                             onClick={this.dollarToPkr} 
-                            className="btn btn-primary"
+                            className="btn btn-dark"
                         >
                             Convert
                         </button>
                     </div>
-                </form>
-                </div>
-            </>
+                    </div>
+               
+                
+                
+          
         );
     }
 }

@@ -6,8 +6,9 @@ import React, { Component } from 'react'
 import Navbar from './components/Navbar'
 import News from './components/News'
 import { Routes, Route, Outlet} from "react-router-dom"
-import Dollarrate from './components/Dollarrate';
-//import { useState } from "react";
+import "./App.css"
+//import Dollarrate from './components/Dollarrate'
+
 
 
 
@@ -49,11 +50,13 @@ toggleStyle = ()=>{
       
      
       <Navbar toggleStyle={this.toggleStyle} mode={this.state.mode}/>
+
+      
       
       
 
       <Routes>
-          <Route exact path= "/" element={<Dollarrate/>}/>
+          <Route exact path= "/" element={<News mode={this.state.mode} key="general" pageSize={6} category='general'/>}/>
           <Route exact path="business" element={<News mode={this.state.mode} key="business" pageSize={6} category='business'/>} />
           <Route exact path="entertainment" element={<News mode={this.state.mode} key="entertainment" pageSize={6} category='entertainment'/>} />
           <Route exact path="science" element={<News mode={this.state.mode} key="science" pageSize={6} category='science'/>} />
